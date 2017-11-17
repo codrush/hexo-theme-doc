@@ -57,6 +57,10 @@
             "searchItemSummarySelector": ".doc-search-results__list__item > p",
             "searchItemSummaryHighlightSelector": ".doc-search-results__list__item .doc-highlight",
             "searchQuery": "hexo"
+          },
+          "logoLink":{
+            "path": "/get-started.html",
+            "logoSelector": ".doc-navbar__logo"
           }
         }
       }

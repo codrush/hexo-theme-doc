@@ -4,7 +4,16 @@ const path = require('path');
 
 const rootTag = '.dc-page';
 
+const Hexo = require('hexo');
+
+const hexo = new Hexo(path.resolve(__dirname, '../'),{});
+
 module.exports = {
+  before: async function(browser, done){
+    await hexo.init();
+    await hexo.load();
+    done();
+  },
   'Open homepage': function (browser) {
     browser
       .url(browser.launchUrl)
@@ -194,6 +203,19 @@ module.exports = {
       .text
       .to
       .match(/\w/);
+  },
+  'Clicking on logo should open corresponding link': function(browser){
+    const stepOptions = getStepOptions('logoLink', browser);
+    const hexoData = hexo.locals.get('data');
+    const { navigation } = hexoData;
+
+
+    browser
+      .url(path.join(browser.launchUrl, stepOptions.path))
+      .click(stepOptions.logoSelector)
+      .waitForElementVisible(rootTag, 1000)
+      .assert
+      .urlEquals(browser.launchUrl+navigation.logo.path, 'Clicking on logo should open corresponding link.');
   },
   after: function (browser) {
     browser.end();

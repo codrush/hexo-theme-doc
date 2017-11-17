@@ -1,5 +1,6 @@
 {
-  "src_folders" : ["tests/lib"],
+  "src_folders" : ["nightwatch/tests.js"],
+  "page_objects_path" : "nightwatch/pages",
   "selenium": {
     "start_process": true,
     "server_path": "./node_modules/webdriver-manager/selenium/selenium-server-standalone-3.7.1.jar",
@@ -19,17 +20,7 @@
         "path": "tests_output/screenshots"
       },
       "globals": {
-        "stepOptions": {
-          "openHomePage": {
-            "message": "Open homepage"
-          },
-          "scrollToAnchor": {
-            "message": "Scroll to Anchor",
-            "path": "/get-started.html",
-            "id": "Quick-Start",
-            "element": "h2"
-          }
-        }
+
       }
     },
     "live": {

@@ -1,5 +1,5 @@
 {
-  "src_folders" : ["nightwatch/tests.js"],
+  "src_folders" : ["nightwatch/lib"],
   "page_objects_path" : "nightwatch/pages",
   "selenium": {
     "start_process": true,

@@ -7,28 +7,28 @@ module.exports = {
     done();
   },
   'openHomePage': function (browser) {
-    const home = browser.page.home();
+    const page = browser.page.home();
 
-    home
+    page
       .navigate()
       .waitForElementVisible('@root', 1000);
   },
   'scrollToAnchor': function (browser) {
 
-    const gettingStarted = browser.page.gettingStarted();
+    const page = browser.page.gettingStarted();
 
-    gettingStarted
+    page
       .navigate()
       .waitForElementVisible('@root', 1000)
       .assert
       .visible('@anchor');
 
 
-    gettingStarted
+    page
       .getLocationInView('@anchor', (result) => {
-        gettingStarted.assert.equal(typeof result, 'object');
-        gettingStarted.assert.equal(result.status, 0);
-        gettingStarted.assert.equal(result.value.y, 0, 'anchor header should be at the top of the page view');
+        page.assert.equal(typeof result, 'object');
+        page.assert.equal(result.status, 0);
+        page.assert.equal(result.value.y, 0, 'anchor header should be at the top of the page view');
       });
   },
   after(browser, done){

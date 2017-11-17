@@ -1,5 +1,5 @@
 {
-  "src_folders" : ["tests"],
+  "src_folders" : ["tests/lib"],
   "selenium": {
     "start_process": true,
     "server_path": "./node_modules/webdriver-manager/selenium/selenium-server-standalone-3.7.1.jar",
@@ -20,47 +20,14 @@
       },
       "globals": {
         "stepOptions": {
+          "openHomePage": {
+            "message": "Open homepage"
+          },
           "scrollToAnchor": {
+            "message": "Scroll to Anchor",
             "path": "/get-started.html",
             "id": "Quick-Start",
             "element": "h2"
-          },
-          "highlightToc": {
-            "path": "/usage-and-configuration/swagger/swagger-to-html.html",
-            "href": "#Demo",
-            "tocCurrentClass": "doc-sidebar-list__toc-item--current",
-            "sidebarCurrentRegex": "doc-sidebar-list__item--current"
-          },
-          "generateToc": {
-            "path": "/usage-and-configuration/writing.html",
-            "tocItemSelector": ".doc-sidebar-list__toc-item"
-          },
-          "searchInputVisible": {
-            "path": "/get-started.html",
-            "searchInputSelector": ".doc-sidebar__search-form input.doc-search-form__input"
-          },
-          "searchResultsDisplayed":{
-            "path": "/get-started.html",
-            "searchInputSelector": ".doc-sidebar__search-form input.doc-search-form__input",
-            "searchResultsSelector": ".doc-search-results",
-            "searchTitleQuerySelector": ".doc-search-results__title__query",
-            "searchQuery": "hexo"
-          },
-          "searchResultItems":{
-            "path": "/get-started.html",
-            "searchInputSelector": ".doc-sidebar__search-form input.doc-search-form__input",
-            "searchResultsSelector": ".doc-search-results",
-            "searchTitleQuerySelector": ".doc-search-results__title__query",
-            "searchResultItemSelector": ".doc-search-results__list__item",
-            "searchItemTitleSelector": ".doc-search-results__list__link",
-            "searchItemScoreSelector": ".doc-search-results__list__score",
-            "searchItemSummarySelector": ".doc-search-results__list__item > p",
-            "searchItemSummaryHighlightSelector": ".doc-search-results__list__item .doc-highlight",
-            "searchQuery": "hexo"
-          },
-          "logoLink":{
-            "path": "/get-started.html",
-            "logoSelector": ".doc-navbar__logo"
           }
         }
       }
